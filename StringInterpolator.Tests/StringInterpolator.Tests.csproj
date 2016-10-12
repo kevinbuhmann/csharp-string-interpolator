@@ -63,6 +63,7 @@
     <Compile Include="StringFormat\SimpleStringFormatTests.cs" />
     <Compile Include="StringFormat\NestedStringFormatTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tester.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StringInterpolator\StringInterpolator.csproj">

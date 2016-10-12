@@ -26,7 +26,7 @@ public static class Source
     }
 }";
 
-            Assert.AreEqual(expectedOutput, Program.Rewrite(input));
+            Tester.ValidateExpectedOutput(input, expectedOutput);
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ public static class Source
     }
 }";
 
-            Assert.AreEqual(expectedOutput, Program.Rewrite(input));
+            Tester.ValidateExpectedOutput(input, expectedOutput);
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ public static class Source
     }
 }";
 
-            Assert.AreEqual(expectedOutput, Program.Rewrite(input));
+            Tester.ValidateExpectedOutput(input, expectedOutput);
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ public static class Source
     }
 }";
 
-            Assert.AreEqual(expectedOutput, Program.Rewrite(input));
+            Tester.ValidateExpectedOutput(input, expectedOutput);
         }
     }
 }
