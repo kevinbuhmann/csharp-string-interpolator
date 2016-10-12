@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringInterpolator", "StringInterpolator\StringInterpolator.csproj", "{98B3EA82-09C4-4A75-B2A3-C63E6ADA563E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringInterpolator.Tests", "StringInterpolator.Tests\StringInterpolator.Tests.csproj", "{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Extensions", "..\..\vintage-software\vstack-extensions\Vstack.Extensions\Vstack.Extensions.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8CFB741B-A140-4740-BFD5-B77A23DD4BC4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98B3EA82-09C4-4A75-B2A3-C63E6ADA563E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B3EA82-09C4-4A75-B2A3-C63E6ADA563E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B3EA82-09C4-4A75-B2A3-C63E6ADA563E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B3EA82-09C4-4A75-B2A3-C63E6ADA563E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029ECBE3-6E0E-498E-80A7-BAD385891C91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
