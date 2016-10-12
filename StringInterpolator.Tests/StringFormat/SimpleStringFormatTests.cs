@@ -78,7 +78,7 @@ public static class Source
         }
 
         [TestMethod]
-        public void SimpleStringFormatWithLeadingLeadingAndTrailingComments()
+        public void SimpleStringFormatWithLeadingAndTrailingComments()
         {
             string input = @"
 public static class Source

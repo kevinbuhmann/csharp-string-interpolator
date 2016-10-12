@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
+using Vstack.Extensions;
 
 namespace StringInterpolator
 {
@@ -24,8 +25,10 @@ namespace StringInterpolator
                 .ToString();
 
             string[] parameters = node.ArgumentList.Arguments
+                .GetWithSeparators()
                 .Skip(1)
-                .Select(n => n.ToString())
+                .Batch(2)
+                .Select(i => $"{i.First().GetTrailingTrivia().ToString().TrimStart()}{i.Last().ToFullString()}")
                 .Select(p => p.Contains(":") ? $"({p})" : p)
                 .ToArray();
 
