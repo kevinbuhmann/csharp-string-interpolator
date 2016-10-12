@@ -28,8 +28,7 @@ namespace StringInterpolator
                 .GetWithSeparators()
                 .Skip(1)
                 .Batch(2)
-                .Select(i => $"{i.First().GetTrailingTrivia().ToString().TrimStart()}{i.Last().ToFullString()}")
-                .Select(p => p.Contains(":") ? $"({p})" : p)
+                .Select(i => new SeparatorAndArgument(i.First(), i.Last().AsNode()).ToString())
                 .ToArray();
 
             if (parameters.Any())

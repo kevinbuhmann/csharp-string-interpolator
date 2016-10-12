@@ -37,7 +37,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return string.Format(""Hello {0} {1},"", /*asdf*/ firstName, /*asdf*/ lastName);
+        return string.Format(""Hello {0} {1},"", /*:asdf:*/ firstName, /*:asdf:*/ lastName);
     }
 }";
 
@@ -46,7 +46,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return $""Hello {/*asdf*/ firstName} {/*asdf*/ lastName},"";
+        return $""Hello {/*:asdf:*/ firstName} {/*:asdf:*/ lastName},"";
     }
 }";
 
@@ -61,7 +61,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return string.Format(""Hello {0} {1},"", firstName /*asdf*/, lastName /*asdf*/);
+        return string.Format(""Hello {0} {1},"", firstName /*:asdf:*/, lastName /*:asdf:*/);
     }
 }";
 
@@ -70,7 +70,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return $""Hello {firstName /*asdf*/} {lastName /*asdf*/},"";
+        return $""Hello {firstName /*:asdf:*/} {lastName /*:asdf:*/},"";
     }
 }";
 
@@ -85,7 +85,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return string.Format(""Hello {0} {1},"", /*asdf*/ firstName /*asdf*/, /*asdf*/ lastName /*asdf*/);
+        return string.Format(""Hello {0} {1},"", /*:asdf:*/ firstName /*:asdf:*/, /*:asdf:*/ lastName /*:asdf:*/);
     }
 }";
 
@@ -94,7 +94,7 @@ public static class Source
 {
     public static string GetGreeting(string firstName, string lastName)
     {
-        return $""Hello {/*asdf*/ firstName /*asdf*/} {/*asdf*/ lastName /*asdf*/},"";
+        return $""Hello {/*:asdf:*/ firstName /*:asdf:*/} {/*:asdf:*/ lastName /*:asdf:*/},"";
     }
 }";
 

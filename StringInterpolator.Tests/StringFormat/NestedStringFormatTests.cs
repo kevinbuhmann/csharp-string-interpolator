@@ -37,7 +37,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return string.Format(""Hello{0}, "", /*asdf*/ string.IsNullOrEmpty(name) ? /*asdf*/ string.Format("" {0}"", name) : string.Empty);
+        return string.Format(""Hello{0}, "", /*:asdf:*/ string.IsNullOrEmpty(name) ? /*:asdf:*/ string.Format("" {0}"", name) : string.Empty);
     }
 }";
 
@@ -46,7 +46,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return $""Hello{(/*asdf*/ string.IsNullOrEmpty(name) ? /*asdf*/ $"" {name}"" : string.Empty)}, "";
+        return $""Hello{/*:asdf:*/ (string.IsNullOrEmpty(name) ? /*:asdf:*/ $"" {name}"" : string.Empty)}, "";
     }
 }";
 
@@ -61,7 +61,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return string.Format(""Hello{0}, "", string.IsNullOrEmpty(name) ? string.Format("" {0}"", name) /*asdf*/ : string.Empty /*asdf*/);
+        return string.Format(""Hello{0}, "", string.IsNullOrEmpty(name) ? string.Format("" {0}"", name) /*:asdf:*/ : string.Empty /*:asdf:*/);
     }
 }";
 
@@ -70,7 +70,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return $""Hello{(string.IsNullOrEmpty(name) ? $"" {name}"" /*asdf*/ : string.Empty /*asdf*/)}, "";
+        return $""Hello{(string.IsNullOrEmpty(name) ? $"" {name}"" /*:asdf:*/ : string.Empty) /*:asdf:*/}, "";
     }
 }";
 
@@ -85,7 +85,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return string.Format(""Hello{0}, "", /*asdf*/ string.IsNullOrEmpty(name) ? /*asdf*/ string.Format("" {0}"", name) /*asdf*/ : string.Empty /*asdf*/);
+        return string.Format(""Hello{0}, "", /*:asdf:*/ string.IsNullOrEmpty(name) ? /*:asdf:*/ string.Format("" {0}"", name) /*:asdf:*/ : string.Empty /*:asdf:*/);
     }
 }";
 
@@ -94,7 +94,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return $""Hello{(/*asdf*/ string.IsNullOrEmpty(name) ? /*asdf*/ $"" {name}"" /*asdf*/ : string.Empty /*asdf*/)}, "";
+        return $""Hello{/*:asdf:*/ (string.IsNullOrEmpty(name) ? /*:asdf:*/ $"" {name}"" /*:asdf:*/ : string.Empty) /*:asdf:*/}, "";
     }
 }";
 
