@@ -60,7 +60,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="StringFormatTests.cs" />
+    <Compile Include="StringFormat\SimpleStringFormatTests.cs" />
+    <Compile Include="StringFormat\NestedStringFormatTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
