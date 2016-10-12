@@ -13,7 +13,7 @@ public static class Source
 {
     public static string GetGreeting(string name)
     {
-        return String.Format(""Hello, {0}"", name);
+        return string.Format(""Hello, {0}"", name);
     }
 }";
 

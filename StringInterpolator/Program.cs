@@ -27,6 +27,7 @@ namespace StringInterpolator
                         RewriteFile(file);
                         Console.WriteLine($"done");
                     }
+
                     Console.WriteLine();
                 }
                 else if (File.Exists(path))
@@ -42,13 +43,6 @@ namespace StringInterpolator
                     Console.WriteLine();
                 }
             }
-
-
-        }
-
-        private static void RewriteFile(string file)
-        {
-            File.WriteAllText(file, Rewrite(File.ReadAllText(file)), Encoding.UTF8);
         }
 
         public static string Rewrite(string source)
@@ -60,6 +54,11 @@ namespace StringInterpolator
             SyntaxNode rewrittenRoot = rewriter.Visit(root);
 
             return rewrittenRoot.ToFullString();
+        }
+
+        private static void RewriteFile(string file)
+        {
+            File.WriteAllText(file, Rewrite(File.ReadAllText(file)), Encoding.UTF8);
         }
     }
 }
