@@ -11,13 +11,13 @@ namespace StringInterpolator
         {
             if (node.IsLiteralStringFormat())
             {
-                return RewriteLiteralStringFormat(node);
+                return this.RewriteLiteralStringFormat(node);
             }
 
             return base.VisitInvocationExpression(node);
         }
 
-        private static SyntaxNode RewriteLiteralStringFormat(InvocationExpressionSyntax node)
+        private SyntaxNode RewriteLiteralStringFormat(InvocationExpressionSyntax node)
         {
             string format = node.ArgumentList.Arguments
                 .First()
@@ -39,7 +39,11 @@ namespace StringInterpolator
                 }
             }
 
-            return SyntaxFactory.ParseExpression(format);
+            ExpressionSyntax expression = SyntaxFactory.ParseExpression(format)
+                .WithLeadingTrivia(node.GetLeadingTrivia())
+                .WithTrailingTrivia(node.GetTrailingTrivia());
+
+            return this.Visit(expression);
         }
     }
 }
