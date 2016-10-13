@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Generic;
 using System.Linq;
 using Vstack.Extensions;
 
@@ -14,8 +15,18 @@ namespace StringInterpolator
             {
                 return this.RewriteLiteralStringFormat(node);
             }
+            else if (node.IsLiteralFormatCall())
+            {
+                return this.RewriterOtherLiteralFormatCall(node);
+            }
 
             return base.VisitInvocationExpression(node);
+        }
+
+        private static SyntaxNode ReplaceInterpolation(InterpolationSyntax interpolation, ExpressionSyntax[] parameters)
+        {
+            int index = int.Parse(interpolation.Expression.ToString());
+            return SyntaxFactory.Interpolation(parameters[index], interpolation.AlignmentClause, interpolation.FormatClause);
         }
 
         private SyntaxNode RewriteLiteralStringFormat(InvocationExpressionSyntax node)
@@ -24,28 +35,34 @@ namespace StringInterpolator
                 .First()
                 .ToString();
 
-            string[] parameters = node.ArgumentList.Arguments
+            ExpressionSyntax[] parameters = node.ArgumentList.Arguments
                 .GetWithSeparators()
                 .Skip(1)
                 .Batch(2)
-                .Select(i => new SeparatorAndArgument(i.First(), i.Last().AsNode()).ToString())
+                .Select(i => new SeparatorAndArgument(i.First(), i.Last().AsNode()).ToExpression())
                 .ToArray();
 
-            if (parameters.Any())
-            {
-                format = $"${format}";
+            ExpressionSyntax formatExpression = SyntaxFactory.ParseExpression($"${format}");
 
-                for (int i = 0; i < parameters.Length; i++)
-                {
-                    format = format.Replace($"{{{i}}}", $"{{{parameters[i]}}}");
-                }
-            }
+            IEnumerable<InterpolationSyntax> interpolations = formatExpression.DescendantNodes()
+                .OfType<InterpolationSyntax>();
 
-            ExpressionSyntax expression = SyntaxFactory.ParseExpression(format)
+            ExpressionSyntax newInterpolation = formatExpression
+                .ReplaceNodes(interpolations, (original, rewritten) => ReplaceInterpolation(original, parameters))
                 .WithLeadingTrivia(node.GetLeadingTrivia())
                 .WithTrailingTrivia(node.GetTrailingTrivia());
 
-            return this.Visit(expression);
+            return this.Visit(newInterpolation);
+        }
+
+        private SyntaxNode RewriterOtherLiteralFormatCall(InvocationExpressionSyntax node)
+        {
+            SyntaxNode stringInteroplationSyntax = this.RewriteLiteralStringFormat(node);
+            string stringInteroplation = stringInteroplationSyntax.ToString();
+            ArgumentListSyntax newArgumentList = SyntaxFactory.ParseArgumentList($"({stringInteroplation})");
+            InvocationExpressionSyntax newInvocationSyntax = node.WithArgumentList(newArgumentList);
+
+            return newInvocationSyntax;
         }
     }
 }

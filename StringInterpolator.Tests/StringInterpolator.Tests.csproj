@@ -60,6 +60,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="StringFormat\EscapedBracesStringFormatTests.cs" />
     <Compile Include="StringFormat\SimpleStringFormatTests.cs" />
     <Compile Include="StringFormat\NestedStringFormatTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

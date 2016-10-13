@@ -1,4 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Vstack.Extensions;
 
 namespace StringInterpolator
@@ -17,6 +19,11 @@ namespace StringInterpolator
         public SyntaxNodeOrToken Separator { get; }
 
         public SyntaxNode Argument { get; }
+
+        public ExpressionSyntax ToExpression()
+        {
+            return SyntaxFactory.ParseExpression(this.ToString());
+        }
 
         public override string ToString()
         {
