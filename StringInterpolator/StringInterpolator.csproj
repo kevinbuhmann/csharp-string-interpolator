@@ -145,9 +145,9 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\vintage-software\vstack-common\Vstack.Common\Vstack.Common.csproj">
+    <ProjectReference Include="..\..\..\vintage-software\vstack\Vstack.Common\Vstack.Common.csproj">
       <Project>{029ecbe3-6e0e-498e-80a7-bad385891c91}</Project>
-      <Name>Vstack.Extensions</Name>
+      <Name>Vstack.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

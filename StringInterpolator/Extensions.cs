@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using System.Linq;
-using Vstack.Common;
+using Vstack.Common.Extensions;
 
 namespace StringInterpolator
 {

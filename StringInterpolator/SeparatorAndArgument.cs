@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Vstack.Common;
+using Vstack.Common.Extensions;
 
 namespace StringInterpolator
 {
@@ -9,7 +9,6 @@ namespace StringInterpolator
     {
         public SeparatorAndArgument(SyntaxNodeOrToken separator, SyntaxNode argument)
         {
-            separator.ValidateNotNullParameter(nameof(separator));
             argument.ValidateNotNullParameter(nameof(argument));
 
             this.Separator = separator;

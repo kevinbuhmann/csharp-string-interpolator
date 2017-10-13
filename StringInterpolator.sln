@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringInterpolator", "Strin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringInterpolator.Tests", "StringInterpolator.Tests\StringInterpolator.Tests.csproj", "{E53FFBE0-9AAB-499D-9E7D-6E8EB7A975FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Common", "..\..\vintage-software\vstack-common\Vstack.Common\Vstack.Common.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vstack.Common", "..\..\vintage-software\vstack\Vstack.Common\Vstack.Common.csproj", "{029ECBE3-6E0E-498E-80A7-BAD385891C91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8CFB741B-A140-4740-BFD5-B77A23DD4BC4}"
 	ProjectSection(SolutionItems) = preProject

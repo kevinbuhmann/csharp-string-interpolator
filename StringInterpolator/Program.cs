@@ -3,7 +3,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using System;
 using System.IO;
 using System.Text;
-using Vstack.Common;
+using Vstack.Common.Extensions;
 
 namespace StringInterpolator
 {
