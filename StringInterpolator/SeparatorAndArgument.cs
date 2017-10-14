@@ -9,7 +9,7 @@ namespace StringInterpolator
     {
         public SeparatorAndArgument(SyntaxNodeOrToken separator, SyntaxNode argument)
         {
-            argument.ValidateNotNullParameter(nameof(argument));
+            argument.ValidateNotNull();
 
             this.Separator = separator;
             this.Argument = argument;

@@ -10,7 +10,7 @@ namespace StringInterpolator
     {
         public static bool IsLiteralStringFormat(this InvocationExpressionSyntax node)
         {
-            node.ValidateNotNullParameter(nameof(node));
+            node.ValidateNotNull();
 
             string[] expressions = new string[]
             {
@@ -23,7 +23,7 @@ namespace StringInterpolator
 
         public static bool IsLiteralFormatCall(this InvocationExpressionSyntax node)
         {
-            node.ValidateNotNullParameter(nameof(node));
+            node.ValidateNotNull();
 
             bool result = false;
 

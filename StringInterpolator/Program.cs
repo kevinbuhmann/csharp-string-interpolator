@@ -11,7 +11,7 @@ namespace StringInterpolator
     {
         public static void Main(string[] args)
         {
-            args.ValidateNotNullParameter(nameof(args));
+            args.ValidateNotNull();
 
             foreach (string path in args)
             {
